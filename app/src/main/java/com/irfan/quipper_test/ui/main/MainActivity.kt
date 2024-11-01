@@ -2,12 +2,12 @@ package com.irfan.quipper_test.ui.main
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.irfan.quipper_test.data.model.Course
 import com.irfan.quipper_test.databinding.ActivityMainBinding
+import com.irfan.quipper_test.ui.details.CourseDetailActivity
 import com.irfan.quipper_test.viewmodel.CourseViewModel
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -36,9 +36,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun adapterOnClick(course: Course) {
-        Toast.makeText(applicationContext, course.title, Toast.LENGTH_SHORT).show()
-//        val intent = Intent(this, CourseDetailActivity()::class.java)
-//        intent.putExtra(COURSE_TITLE, course.title)
-//        startActivity(intent)
+        val intent = Intent(this, CourseDetailActivity()::class.java)
+        intent.putExtra(COURSE_TITLE, course.title)
+        startActivity(intent)
     }
 }

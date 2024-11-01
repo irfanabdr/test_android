@@ -15,6 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuipperTest"
         tools:targetApi="31">
+
         <activity
             android:name=".ui.main.MainActivity"
             android:exported="true"
@@ -27,6 +28,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".ui.details.CourseDetailActivity"
+            android:exported="false"
+            android:screenOrientation="portrait"
+            tools:ignore="DiscouragedApi,LockedOrientationActivity" />
+
     </application>
 
 </manifest>

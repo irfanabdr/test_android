@@ -19,8 +19,4 @@ class CourseViewModel @Inject constructor(private val repository: CourseReposito
             repository.refreshCourses()
         }
     }
-
-    fun getCourseByTitle(title: String): LiveData<Course> {
-        return repository.getCourseByTitle(title)
-    }
 }
