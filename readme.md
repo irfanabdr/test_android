@@ -4,5 +4,4 @@ A mobile app to display a list of courses and detailed information about each co
 
 ## Screenshots
 
-![Android List](screenshots/android_list.png)
-![Android Detail](screenshots/android_detail.png)
+<img src="screenshots/android_list.png" width="250">  <img src="screenshots/android_detail.png" width="250">
