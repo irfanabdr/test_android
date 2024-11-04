@@ -10,7 +10,7 @@ import com.irfan.quipper_test.data.model.Course
 @Dao
 interface CourseDao {
     @Query("SELECT * FROM courses")
-    fun getAllCourses(): LiveData<List<Course>>
+    suspend fun getAllCourses(): List<Course>
 
     @Query("SELECT * FROM courses WHERE title = :courseTitle")
     fun getCourseByTitle(courseTitle: String): LiveData<Course>

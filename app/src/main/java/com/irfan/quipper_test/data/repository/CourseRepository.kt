@@ -8,15 +8,16 @@ import javax.inject.Inject
 
 class CourseRepository @Inject constructor(private val apiService: ApiService, private val courseDao: CourseDao) {
 
-    val courses: LiveData<List<Course>> = courseDao.getAllCourses()
+    suspend fun fetchCourses(): List<Course> {
+        return apiService.getCourses()
+    }
 
-    suspend fun refreshCourses() {
-        try {
-            val itemsFromNetwork = apiService.getCourses()
-            courseDao.insertCourses(itemsFromNetwork)
-        } catch (e: Exception) {
-            e.printStackTrace()
-        }
+    suspend fun getCachedData(): List<Course> {
+        return courseDao.getAllCourses()
+    }
+
+    suspend fun saveToCache(courses: List<Course>) {
+        courseDao.insertCourses(courses)
     }
 
     fun getCourseByTitle(title: String): LiveData<Course> {
